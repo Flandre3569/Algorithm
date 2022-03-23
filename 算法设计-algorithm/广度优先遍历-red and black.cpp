@@ -2,22 +2,22 @@
 using namespace std;
 char room[23][23];
 int dir[4][2]={
-    {-1,0},    //Ïò×ó£¬×óÉÏ½ÇµÄ×ø±êÊÇ£¨0,0£©
-    {0,-1},    //ÏòÉÏ
-    {1,0},     //ÏòÓÒ
-    {0,1}      //ÏòÏÂ
+    {-1,0},    //å‘å·¦ï¼Œå·¦ä¸Šè§’çš„åæ ‡æ˜¯ï¼ˆ0,0ï¼‰
+    {0,-1},    //å‘ä¸Š
+    {1,0},     //å‘å³
+    {0,1}      //å‘ä¸‹
 };
 
-int Wx,Hy,num;  //WxĞĞ£¬HyÁĞ£¬ÓÃnumÍ³¼Æ¿É×ßµÄÎ»ÖÃÓĞ¶àÉÙ
-#define CHECK(x,y)(x<Wx&&x>=0&&y>=0&&y<Hy) //ÊÇ·ñÔÚroomÖĞ
+int Wx,Hy,num;  //Wxè¡Œï¼ŒHyåˆ—ï¼Œç”¨numç»Ÿè®¡å¯èµ°çš„ä½ç½®æœ‰å¤šå°‘
+#define CHECK(x,y)(x<Wx&&x>=0&&y>=0&&y<Hy) //æ˜¯å¦åœ¨roomä¸­
 
 struct node{
     int x,y;
 };
 
 void BFS(int dx,int dy){
-    num=1;  //ÆğµãÒ²°üº¬ÔÚ×©¿éÄÚ
-    queue<node>q;   //¶ÓÁĞÖĞ·Å×ø±êµã
+    num=1;  //èµ·ç‚¹ä¹ŸåŒ…å«åœ¨ç –å—å†…
+    queue<node>q;   //é˜Ÿåˆ—ä¸­æ”¾åæ ‡ç‚¹
     node start,next;
     start.x=dx;
     start.y=dy;
@@ -25,7 +25,7 @@ void BFS(int dx,int dy){
     while(!q.empty()){
         start=q.front();
         q.pop();
-        cout<<"out"<<start.x<<start.y<<endl;   //´òÓ¡³ö¶ÓÁĞÇé¿ö£¬½øĞĞÑéÖ¤
+        cout<<"out"<<start.x<<start.y<<endl;   //æ‰“å°å‡ºé˜Ÿåˆ—æƒ…å†µï¼Œè¿›è¡ŒéªŒè¯
         for(int i=0;i<4;i++){
             next.x=start.x+dir[i][0];
             next.y=start.y+dir[i][1];
@@ -41,10 +41,10 @@ void BFS(int dx,int dy){
 
 int main(){
     int x,y,dx,dy;
-    while(cin>>Wx>>Hy){        //WxĞĞ£¬HyÁĞ
-        if(Wx==0&&Hy==0) break; //½áÊø±êÖ¾
-        for(y=0;y<Hy;y++){      //ÓĞHyÁĞ
-            for(x=0;x<Wx;x++){  //Ò»´Î¶ÁÈëÒ»ĞĞ
+    while(cin>>Wx>>Hy){        //Wxè¡Œï¼ŒHyåˆ—
+        if(Wx==0&&Hy==0) break; //ç»“æŸæ ‡å¿—
+        for(y=0;y<Hy;y++){      //æœ‰Hyåˆ—
+            for(x=0;x<Wx;x++){  //ä¸€æ¬¡è¯»å…¥ä¸€è¡Œ
                 cin>>room[x][y];
                 if(room[x][y]=='@'){
                     dx=x;

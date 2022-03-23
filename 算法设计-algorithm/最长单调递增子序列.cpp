@@ -8,7 +8,7 @@ int MaxIncre(int n)
     int b[NUM]={0};
     int i,j;
     b[1]=1;
-    int max=0; //Êý×ébµÄ×î´óÖµ
+    int max=0; //æ•°ç»„bçš„æœ€å¤§å€¼
     for(i=2;i<=n;i++){
         int k=0;
         for(j=1;j<i;j++)

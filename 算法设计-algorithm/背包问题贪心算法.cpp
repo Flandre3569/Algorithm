@@ -17,13 +17,13 @@ double knapsack(int n,bag a[],double c){
     double cleft=c;
     int i=0;
     double b=0;
-    //µ±±³°ü»¹ÄÜÍêÈ«×°ÏÂÎïÆ·
+    //å½“èƒŒåŒ…è¿˜èƒ½å®Œå…¨è£…ä¸‹ç‰©å“
     while(i<n&&a[i].w<=cleft){
         cleft-=a[i].w;
         b+=a[i].v;
         i++;
     }
-    //×°ÂúÊ£Óà¿Õ¼ä
+    //è£…æ»¡å‰©ä½™ç©ºé—´
     if(i<n) b+=1.0*a[i].v*cleft/a[i].w;
     return b;
 }

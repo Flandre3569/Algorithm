@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//整数因子分解
+//鏁存暟鍥犲瓙鍒嗚В
 int total;
 void solve(int n)
 {

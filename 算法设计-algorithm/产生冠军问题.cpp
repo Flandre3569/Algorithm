@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//产生冠军问题
+//浜х敓鍐犲啗闂
 int main()
 {
     set<string> A,B;

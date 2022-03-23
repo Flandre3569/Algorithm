@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int a[1001];//¼ÇÒäÊı×é
+int a[1001];//è®°å¿†æ•°ç»„
 
 int comp(int n)
 {

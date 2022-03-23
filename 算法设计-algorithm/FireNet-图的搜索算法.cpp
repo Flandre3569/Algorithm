@@ -1,19 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-char cMap[5][5];//µØÍ¼
-int iBest;//×îÓÅ½â
-int n;//µØÍ¼µÄ´óĞ¡
+char cMap[5][5];//åœ°å›¾
+int iBest;//æœ€ä¼˜è§£
+int n;//åœ°å›¾çš„å¤§å°
 
 bool CanPut(int row,int col)
 {
     int i;
-    //ÅĞ¶ÏcolÁĞÉÏµÄºÏ·¨ĞÔ
+    //åˆ¤æ–­colåˆ—ä¸Šçš„åˆæ³•æ€§
     for(i=row-1;i>=0;i--){
         if(cMap[i][col]=='O') return false;
         if(cMap[i][col]=='X')break;
     }
-    //ÅĞ¶ÏrowĞĞÉÏµÄºÏ·¨ĞÔ
+    //åˆ¤æ–­rowè¡Œä¸Šçš„åˆæ³•æ€§
     for(i=col-1;i>=0;i--){
         if(cMap[row][i]=='O') return false;
         if(cMap[row][i]=='X') break;
@@ -23,25 +23,25 @@ bool CanPut(int row,int col)
 
 void solve(int k,int current)
 {
-    //×ø±ê
+    //åæ ‡
     int x,y;
-    //ÅĞ¶ÏµØÍ¼ÊÇ·ñÍÆËãÍê±Ï
+    //åˆ¤æ–­åœ°å›¾æ˜¯å¦æ¨ç®—å®Œæ¯•
     if(k==n*n){
         if(current>iBest){
             iBest=current;
             return;
         }
     }else{
-        //½«Í¼±ê×ø±ê»¯
+        //å°†å›¾æ ‡åæ ‡åŒ–
         x=k/n;
         y=k%n;
-        //Èç¹û¿ÉÒÔ·Åµï±¤
+        //å¦‚æœå¯ä»¥æ”¾ç¢‰å ¡
         if(cMap[x][y]=='.'&&CanPut(x,y)){
             cMap[x][y]='O';
             solve(k+1,current+1);
             cMap[x][y]='.';
         }
-        //Èç¹û²»ÄÜ·ÅÖÃµï±¤
+        //å¦‚æœä¸èƒ½æ”¾ç½®ç¢‰å ¡
         solve(k+1,current);
     }
 }

@@ -7,11 +7,11 @@ int b[NUM][NUM];
 void LCSLength(int m,int n,const char x[],char y[])
 {
     int i,j;
-    //数组C的第0行、第0列置0
+    //鏁扮粍C鐨勭0琛屻�佺0鍒楃疆0
     for(i=1;i<=m;i++) c[i][0]=0;
     for(i=1;i<=n;i++) c[0][i]=0;
 
-    //根据递推公式构造数组c
+    //鏍规嵁閫掓帹鍏紡鏋勯�犳暟缁刢
     for(i=1;i<=m;i++)
     for(j=1;j<=n;j++){
         if(x[i]==y[j]){

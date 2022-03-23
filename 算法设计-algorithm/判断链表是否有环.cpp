@@ -8,7 +8,7 @@ using namespace std;
 };
 
 
-//设置两个指针，一个快指针一个慢指针，然后让两个指针同时指向头指针，如果两个指针能够相遇，则证明有环
+//璁剧疆涓や釜鎸囬拡锛屼竴涓揩鎸囬拡涓�涓參鎸囬拡锛岀劧鍚庤涓や釜鎸囬拡鍚屾椂鎸囧悜澶存寚閽堬紝濡傛灉涓や釜鎸囬拡鑳藉鐩搁亣锛屽垯璇佹槑鏈夌幆
 class Solution {
 public:
     bool hasCycle(ListNode *head) {

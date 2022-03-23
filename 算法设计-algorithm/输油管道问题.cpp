@@ -3,18 +3,18 @@ using namespace std;
 # define NUM 1001
 int a[NUM];
 
-////ÅÅÐòËã·¨¼ÆËãÖÐÎ»Êý
+////æŽ’åºç®—æ³•è®¡ç®—ä¸­ä½æ•°
 //int main()
 //{
-//    int n;//ÓÍ¾®µÄÊýÁ¿
-//    int x;//x×ø±ê£¬¶ÁÈ¡ºó¶ªÆú
-//    int a[1000];//y×ø±ê
+//    int n;//æ²¹äº•çš„æ•°é‡
+//    int x;//xåæ ‡ï¼Œè¯»å–åŽä¸¢å¼ƒ
+//    int a[1000];//yåæ ‡
 //    cin>>n;
 //    for(int k=0;k<n;k++){
 //        cin>>x>>a[k];
 //    }
-//    sort(a,a+n);//°´ÉýÐòÅÅÐò
-//    //¼ÆËã¸÷ÓÍ¾®µ½Ö÷¹ÜµÀÖ®¼äµÄÊäÓÍ¹ÜµÀ×îÐ¡³¤¶ÈºÍ
+//    sort(a,a+n);//æŒ‰å‡åºæŽ’åº
+//    //è®¡ç®—å„æ²¹äº•åˆ°ä¸»ç®¡é“ä¹‹é—´çš„è¾“æ²¹ç®¡é“æœ€å°é•¿åº¦å’Œ
 //    int min=0;
 //    for(int i=0;i<n;i++){
 //        min+=(int)fabs(a[i]-a[n/2]);
@@ -22,17 +22,17 @@ int a[NUM];
 //    cout<<min<<endl;
 //
 //}
-   //·ÖÖÎ·¨¼ÆËãÖÐÎ»Êý
+   //åˆ†æ²»æ³•è®¡ç®—ä¸­ä½æ•°
 int select(int left,int right,int k)
 {
     if(left>=right)return a[left];
     int i=left;
     int j=right+1;
 
-    //°Ñ×î×ó±ß×÷Îª·Ö½çÊý¾Ý
+    //æŠŠæœ€å·¦è¾¹ä½œä¸ºåˆ†ç•Œæ•°æ®
     int pivot=a[left];
 
-    //°ÑÔÚpivot×ó±ßµÄ±Èpivot´óµÄÔªËØºÍÔÚpivotÓÒ±ßµÄ±ÈËûÐ¡µÄ½øÐÐ½»»»
+    //æŠŠåœ¨pivotå·¦è¾¹çš„æ¯”pivotå¤§çš„å…ƒç´ å’Œåœ¨pivotå³è¾¹çš„æ¯”ä»–å°çš„è¿›è¡Œäº¤æ¢
     while(true){
         do{
             i=i+1;
@@ -44,7 +44,7 @@ int select(int left,int right,int k)
         if(i>=j) break;
         swap(a[i],a[j]);
     }
-    //²éÕÒµ½µÚk´óµÄÔªËØ
+    //æŸ¥æ‰¾åˆ°ç¬¬kå¤§çš„å…ƒç´ 
     if(j-left+1==k){
         return pivot;
     }
@@ -57,16 +57,16 @@ int select(int left,int right,int k)
 }
 int main()
 {
-    int n;//ÓÍ¾®µÄÊýÁ¿
-    int x;//x×ø±ê,¶ÁÈ¡ºó¶ªÆú
-    int b[1000];//y×ø±ê
+    int n;//æ²¹äº•çš„æ•°é‡
+    int x;//xåæ ‡,è¯»å–åŽä¸¢å¼ƒ
+    int b[1000];//yåæ ‡
     cin>>n;
     for(int i=0;i<n;i++){
         cin>>x>>b[i];
     }
-    //»ñÈ¡ÖÐÎ»Êý£¬ÀûÓÃselect·½·¨
+    //èŽ·å–ä¸­ä½æ•°ï¼Œåˆ©ç”¨selectæ–¹æ³•
     int y=select(0,n-1,n/2);
-    //¼ÆËã¸÷ÊäÓÍ¹ÜµÀµ½Ö÷¹ÜµÀµÄ×îÐ¡³¤¶È
+    //è®¡ç®—å„è¾“æ²¹ç®¡é“åˆ°ä¸»ç®¡é“çš„æœ€å°é•¿åº¦
     int min=0;
     for(int i=0;i<n;i++){
         min+=(int)fabs(b[i]-b[y]);

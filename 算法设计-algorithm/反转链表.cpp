@@ -21,21 +21,21 @@ ListNode* ReverseList(ListNode* pHead) {
         ListNode * tail = NULL;
         ListNode * mid = pHead;
         ListNode * start = pHead->next;
-        //Ò»Ö±±éÀú
+        //ä¸€ç›´éå†
         while (1)
         {
-            //ĞŞ¸Ä mid ËùÖ¸½ÚµãµÄÖ¸Ïò
+            //ä¿®æ”¹ mid æ‰€æŒ‡èŠ‚ç‚¹çš„æŒ‡å‘
             mid->next = tail;
-            //´ËÊ±ÅĞ¶Ï end ÊÇ·ñÎª NULL£¬Èç¹û³ÉÁ¢ÔòÍË³öÑ­»·
+            //æ­¤æ—¶åˆ¤æ–­ end æ˜¯å¦ä¸º NULLï¼Œå¦‚æœæˆç«‹åˆ™é€€å‡ºå¾ªç¯
             if (start == NULL) {
                 break;
             }
-            //ÕûÌåÏòºóÒÆ¶¯ 3 ¸öÖ¸Õë
+            //æ•´ä½“å‘åç§»åŠ¨ 3 ä¸ªæŒ‡é’ˆ
             tail = mid;
             mid = start;
             start = start->next;
         }
-        //×îºóĞŞ¸Ä head Í·Ö¸ÕëµÄÖ¸Ïò
+        //æœ€åä¿®æ”¹ head å¤´æŒ‡é’ˆçš„æŒ‡å‘
         pHead = mid;
         return pHead;
     }
@@ -43,7 +43,7 @@ ListNode* ReverseList(ListNode* pHead) {
 
 
 
-//¸øÁ´±í¸³Öµ
+//ç»™é“¾è¡¨èµ‹å€¼
 ListNode* CreatList(){
     ListNode* pNode = new ListNode(0);
     pNode->next = NULL;
@@ -57,7 +57,7 @@ ListNode* CreatList(){
     return pHead;
 }
 
-//´òÓ¡Á´±í
+//æ‰“å°é“¾è¡¨
 void printList(ListNode* pHead){
     ListNode* pTraverse = pHead;
     if (!pTraverse) {

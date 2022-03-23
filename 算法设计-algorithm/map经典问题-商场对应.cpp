@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//map¾­µäÎÊÌâ----ÉÌ³¡ÅÅÃû
+//mapç»å…¸é—®é¢˜----å•†åœºæ’å
 int main()
 {
     int n,m,p;
@@ -18,7 +18,7 @@ int main()
                 shop[s]+=p;
             }
             int rank=1;
-            map<string,int>::iterator it;//µü´úÆ÷
+            map<string,int>::iterator it;//è¿­ä»£å™¨
             for(it=shop.begin();it!=shop.end();it++){
                 if(it->second>shop["memory"])
                     rank++;

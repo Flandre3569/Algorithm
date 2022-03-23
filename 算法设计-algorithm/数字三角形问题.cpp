@@ -3,7 +3,7 @@ using namespace std;
 #define NUM 100
 int tri[NUM][NUM];
 
-//从底向上遍历
+//浠庡簳鍚戜笂閬嶅巻
 int triangle(int n)
 {
     int i,j;

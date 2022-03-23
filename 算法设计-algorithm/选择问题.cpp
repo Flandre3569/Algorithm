@@ -3,17 +3,17 @@ using namespace std;
 #define NUM 1001
 int a[NUM];
 
-//Æğµã¡¢ÖÕµãºÍµÚKĞ¡µÄÔªËØ
+//èµ·ç‚¹ã€ç»ˆç‚¹å’Œç¬¬Kå°çš„å…ƒç´ 
 int select(int left,int right,int k)
 {
     if(left>=right)return a[left];
     int i=left;
     int j=right+1;
 
-    //°Ñ×î×ó±ß×÷Îª·Ö½çÊı¾İ
+    //æŠŠæœ€å·¦è¾¹ä½œä¸ºåˆ†ç•Œæ•°æ®
     int pivot=a[left];
 
-    //°ÑÔÚpivot×ó±ßµÄ±Èpivot´óµÄÔªËØºÍÔÚpivotÓÒ±ßµÄ±ÈËûĞ¡µÄ½øĞĞ½»»»
+    //æŠŠåœ¨pivotå·¦è¾¹çš„æ¯”pivotå¤§çš„å…ƒç´ å’Œåœ¨pivotå³è¾¹çš„æ¯”ä»–å°çš„è¿›è¡Œäº¤æ¢
     while(true){
         do{
             i=i+1;
@@ -25,7 +25,7 @@ int select(int left,int right,int k)
         if(i>=j) break;
         swap(a[i],a[j]);
     }
-    //²éÕÒµ½µÚk´óµÄÔªËØ
+    //æŸ¥æ‰¾åˆ°ç¬¬kå¤§çš„å…ƒç´ 
     if(j-left+1==k){
         return pivot;
     }
