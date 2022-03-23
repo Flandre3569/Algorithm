@@ -8,7 +8,7 @@
 
 
  int Knapsack(int v[],int w[],int c,int n){//value weight capacity num
- 	for(int i=1;i<n+1;i++){//ÒòÎªÉæ¼°µ½i-1µÄ¼ÆËã£¬ËùÒÔÏÂ±ê´Ó1¿ªÊ¼
+ 	for(int i=1;i<n+1;i++){//å› ä¸ºæ¶‰åŠåˆ°i-1çš„è®¡ç®—ï¼Œæ‰€ä»¥ä¸‹æ ‡ä»1å¼€å§‹
  		for(int j=1;j<c+1;j++){
  			if(j<w[i]){
  				table[i][j]=table[i-1][j];
@@ -21,20 +21,20 @@
  	}
  	return table[n][c];
  }
- int KnapsackTwo(int v[],int w[],int c,int n){//´Ë·½·¨´Ón->1¼ÆËã ¡£×Ôµ×ÏòÉÏ£¬×Ô×óÏòÓÒ
+ int KnapsackTwo(int v[],int w[],int c,int n){//æ­¤æ–¹æ³•ä»n->1è®¡ç®— ã€‚è‡ªåº•å‘ä¸Šï¼Œè‡ªå·¦å‘å³
  	int jMax=min(w[n]-1,c);
- 	for(int j=0;j<jMax;j++)tableTwo[n][j]=0;//j<µ±Ç°±³°üÈİÁ¿»òÕßµ±Ç°ÎïÆ·ÖØÁ¿Ê±£¬tableTwo[n][j]=0;
- 	for(int j=w[n];j<=c;j++)tableTwo[n][j]=v[n];//µ±Ç°±³°üÈİÁ¿¿ÉÒÔ×°µÃÏÂÊ±£¬ tableTwo[n][j]=v[n];
+ 	for(int j=0;j<jMax;j++)tableTwo[n][j]=0;//j<å½“å‰èƒŒåŒ…å®¹é‡æˆ–è€…å½“å‰ç‰©å“é‡é‡æ—¶ï¼ŒtableTwo[n][j]=0;
+ 	for(int j=w[n];j<=c;j++)tableTwo[n][j]=v[n];//å½“å‰èƒŒåŒ…å®¹é‡å¯ä»¥è£…å¾—ä¸‹æ—¶ï¼Œ tableTwo[n][j]=v[n];
 	for(int i=n-1;i>1;i--){
 		jMax=min(w[i],c);
 		for(int j=0;j<=jMax;j++)tableTwo[i][j]=tableTwo[i+1][j];
-		for(int j=w[i];j<=c;j++)tableTwo[i][j]=max(tableTwo[i+1][j],tableTwo[i+1][j-w[i]]+v[i]);//µ±Ç°±³°üÈİÁ¿×°µÃÏÂ£¬µ«ÊÇÒªÅĞ¶ÏÆä¼ÛÖµÊÇ·ñ×î´ó£¬È·¶¨µ½µ××°²»×°
+		for(int j=w[i];j<=c;j++)tableTwo[i][j]=max(tableTwo[i+1][j],tableTwo[i+1][j-w[i]]+v[i]);//å½“å‰èƒŒåŒ…å®¹é‡è£…å¾—ä¸‹ï¼Œä½†æ˜¯è¦åˆ¤æ–­å…¶ä»·å€¼æ˜¯å¦æœ€å¤§ï¼Œç¡®å®šåˆ°åº•è£…ä¸è£…
 	}
-	tableTwo[1][c]=tableTwo[2][c];//ÏÈ¼ÙÉè1ÎïÆ·²»×°
-	if(c>=w[1])tableTwo[1][c]=max(tableTwo[1][c],tableTwo[2][c-w[1]]+v[1]);//¸ù¾İ¼ÛÖµ£¬ÅĞ¶Ïµ½µ××°²»×°
-	return tableTwo[1][c];//·µ»Ø×îÓÅÖµ
+	tableTwo[1][c]=tableTwo[2][c];//å…ˆå‡è®¾1ç‰©å“ä¸è£…
+	if(c>=w[1])tableTwo[1][c]=max(tableTwo[1][c],tableTwo[2][c-w[1]]+v[1]);//æ ¹æ®ä»·å€¼ï¼Œåˆ¤æ–­åˆ°åº•è£…ä¸è£…
+	return tableTwo[1][c];//è¿”å›æœ€ä¼˜å€¼
   }
- void Traceback(int w[],int c,int n){//¸ù¾İ×îÓÅÖµ£¬Çó×îÓÅ½â
+ void Traceback(int w[],int c,int n){//æ ¹æ®æœ€ä¼˜å€¼ï¼Œæ±‚æœ€ä¼˜è§£
  	for(int i=1;i<n;i++){
  		if(tableTwo[i][c]==tableTwo[i+1][c])flag[i]=0;
  		else {
@@ -46,13 +46,13 @@
  }
 
  int main(){
- 	int weight[6]={0,2,2,6,5,4};//×îµÍÎ»²¹ÁË0£¬´Óweight[1]¿ªÊ¼¸³Öµ
+ 	int weight[6]={0,2,2,6,5,4};//æœ€ä½ä½è¡¥äº†0ï¼Œä»weight[1]å¼€å§‹èµ‹å€¼
  	int value[6]={0,6,3,5,4,6};
  	int c=10;
- 	cout<<"µÚÒ»ÖÖ·½·¨->×Ü¼ÛÖµ×î´óÎª£º"<<Knapsack(value,weight,c,5)<<endl;
- 	cout<<"µÚ¶şÖÖ·½·¨->×Ü¼ÛÖµ×î´óÎª£º"<<KnapsackTwo(value,weight,c,5)<<endl;
+ 	cout<<"ç¬¬ä¸€ç§æ–¹æ³•->æ€»ä»·å€¼æœ€å¤§ä¸ºï¼š"<<Knapsack(value,weight,c,5)<<endl;
+ 	cout<<"ç¬¬äºŒç§æ–¹æ³•->æ€»ä»·å€¼æœ€å¤§ä¸ºï¼š"<<KnapsackTwo(value,weight,c,5)<<endl;
  	Traceback(weight,c,5);
- 	cout<<"×îÓÅÖµµÄ½â£º";
+ 	cout<<"æœ€ä¼˜å€¼çš„è§£ï¼š";
  	for(int i=1;i<5+1;i++)cout<<flag[i]<<" ";
  	cout<<endl;
  	for(int i=1;i<6;i++){
