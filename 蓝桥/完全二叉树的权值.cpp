@@ -14,15 +14,15 @@ int main()
     }
 
     int j = 0;
-    // ¼ÇÂ¼µ±Ç°ÖµºÍ×î´óÖµ
+    // è®°å½•å½“å‰å€¼å’Œæœ€å¤§å€¼
     int maxSum = 0, temp = 0, record = 0;
-    // ¼ÇÂ¼×î´óÖµÊôÓÚµÚ¼¸²ã
+    // è®°å½•æœ€å¤§å€¼å±äºç¬¬å‡ å±‚
     int countNum = 0;
 
     for(int i = 0;i < n;) {
         while(j < pow(2, record)) {
             temp += args[i];
-            i++; //¼ÇÂ¼µ±Ç°
+            i++; //è®°å½•å½“å‰
             j++;
         }
         if(temp > maxSum) {

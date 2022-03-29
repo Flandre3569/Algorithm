@@ -10,9 +10,9 @@ int main()
     int num;
     for(int i = 0; i < n; i++) {
         scanf("%d", &num);
-        while(visit[num]) { // Èç¹ûÕâ¸öÊı´æÔÚÁË£¬½øÈëÑ­»·
-            int temp = num; // ¼ÇÂ¼µ±Ç°Î»ÖÃµÄvisitÊı×éÖĞµÄÔ­Êı
-            num += visit[num]; // ¹ıÂËµô·ÃÎÊ´ÎÊı
+        while(visit[num]) { // å¦‚æœè¿™ä¸ªæ•°å­˜åœ¨äº†ï¼Œè¿›å…¥å¾ªç¯
+            int temp = num; // è®°å½•å½“å‰ä½ç½®çš„visitæ•°ç»„ä¸­çš„åŸæ•°
+            num += visit[num]; // è¿‡æ»¤æ‰è®¿é—®æ¬¡æ•°
             ++visit[temp];
         }
         visit[num] = 1;
