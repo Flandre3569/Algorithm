@@ -1,29 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-
+int n,m;
+long long sum=0;
+int a[300000];
 int main()
 {
-    int add, sub;
-    cin >> add >> sub;
-    int args[200005];
-    int n = add + sub + 1;
-    for(int i = 0; i < n; i++) {
-        cin >> args[i];
+    cin>>n>>m;
+    int z=n+m+1;
+
+    for(int i=1;i<=z;i++)
+    {
+        cin>>a[i];
     }
 
-    sort(args, args + n ,greater<int>());
-    long long temp = args[0];
-    int cursor = 0;
-    for(int i = 0; i < add; i++) {
-        temp += args[cursor + 1];
-        cursor++;
+    sort(a+1,a+z+1);
+    if(m==0)
+    {
+        for(int i=1;i<=z;i++)
+        {
+            sum+=a[i];
+        }
     }
-    for(int j = 0; j < sub; j++) {
-        temp -= args[cursor + 1];
-        cursor++;
-    }
-    cout << temp;
+    else
+    {
+        sum=a[z]-a[1];
+        for(int i=2;i<z;i++)
+        {
 
+            sum+=abs(a[i]);
+        }
+    }
+    cout<<sum;
     return 0;
 }
