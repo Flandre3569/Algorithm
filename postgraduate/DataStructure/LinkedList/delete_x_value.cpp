@@ -58,10 +58,10 @@ int main()
     ListNode *p1 = new ListNode(2);
     pNode->next = p1;
     ListNode *p2 = new ListNode(3);
-    p2->next = p2;
+    p1->next = p2;
     ListNode *p3 = new ListNode(4);
     p2->next = p3;
-
+    printList(pHead);
     delX(pHead, 3);
     printList(pHead);
 
