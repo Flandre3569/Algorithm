@@ -1,0 +1,31 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+      {
+  
+          "label": "echo",
+          "type": "shell",
+          "command": "E:\\MinGW\\bin\\g++.exe",
+          "args": [
+              "-g", 
+              "${file}", 
+              "-o", 
+              "${fileDirname}\\${fileBasenameNoExtension}.exe",
+              "-fexec-charset=GBK"//解决中文乱码
+          ],
+          "options": {
+            "cwd": "E:\\MinGW\\bin"
+        }
+      }
+  ],
+  "presentation": {
+      "echo": true,
+      "reveal": "always",
+      "focus": false,
+      "panel": "shared", 
+      "showReuseMessage": true,
+      "clear": false
+  }
+}
