@@ -90,6 +90,6 @@ int main()
   InitListWithHead(str2);
   createList(str1);
   createList(str2);
-  GetSameSuffix(str1, str2);
+  GetSameSuffix(str1, str2);  
   traverseList(str1);
 }
