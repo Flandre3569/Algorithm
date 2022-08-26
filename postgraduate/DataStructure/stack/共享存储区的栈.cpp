@@ -25,7 +25,7 @@ bool Push(int i, elemtp x) {
   }
   switch(i) {
     case 0:
-      s.stack[++s.top[0]] = x;
+      s.stack[++s.top[0]] = x; 
       return true;
       break;
     case 1:
