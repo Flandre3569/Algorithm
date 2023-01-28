@@ -1,16 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    double num;
-    cin >> num;
-    double sum = 0;
-    while(num != 0){
-        double a = num % 10;
-        sum = sum*10 + a;
-    }
-    cout << sum << endl;
-
+int main() {
+    string s;
+    cin>>s;
+    for(int i=s.size()-1;i>=0;--i)
+        cout<<s[i];
+    cout<<endl;
     return 0;
 }
