@@ -1,0 +1,15 @@
+﻿  源.cpp
+E:\visualStudio\VC\Tools\MSVC\14.34.31933\include\utility(32,19): error C2064: 项不会计算为接受 2 个参数的函数
+E:\visualStudio\VC\Tools\MSVC\14.34.31933\include\utility(31,33): message : 查看对正在编译的函数 模板 实例化“const _Ty &std::max<int,int>(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)”的引用
+          with
+          [
+              _Ty=int,
+              _Pr=int
+          ]
+E:\visualStudio\VC\Tools\MSVC\14.34.31933\include\utility(55,19): error C2064: 项不会计算为接受 2 个参数的函数
+E:\visualStudio\VC\Tools\MSVC\14.34.31933\include\utility(54,33): message : 查看对正在编译的函数 模板 实例化“const _Ty &std::min<int,int>(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)”的引用
+          with
+          [
+              _Ty=int,
+              _Pr=int
+          ]

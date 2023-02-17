@@ -1,0 +1,7 @@
+﻿  main.cpp
+E:\github\Algorithm\postgraduate\南理工机试练习\mathN\mathN\main.cpp(10,12): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+E:\github\Algorithm\postgraduate\南理工机试练习\mathN\mathN\main.cpp(16,12): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\github\Algorithm\postgraduate\南理工机试练习\mathN\mathN\main.cpp(31,11): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\github\Algorithm\postgraduate\南理工机试练习\mathN\mathN\main.cpp(32,11): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\github\Algorithm\postgraduate\南理工机试练习\mathN\mathN\main.cpp(40,13): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  mathN.vcxproj -> E:\github\Algorithm\postgraduate\南理工机试练习\mathN\x64\Debug\mathN.exe
